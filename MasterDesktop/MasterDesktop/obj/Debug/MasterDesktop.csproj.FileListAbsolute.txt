@@ -1,0 +1,19 @@
+G:\github\MasterDesktop\MasterDesktop\MasterDesktop\obj\Debug\MasterDesktop.csprojResolveAssemblyReference.cache
+G:\github\MasterDesktop\MasterDesktop\MasterDesktop\obj\Debug\MainWindow.g.cs
+G:\github\MasterDesktop\MasterDesktop\MasterDesktop\obj\Debug\App.g.cs
+G:\github\MasterDesktop\MasterDesktop\MasterDesktop\obj\Debug\MainWindow.baml
+G:\github\MasterDesktop\MasterDesktop\MasterDesktop\obj\Debug\MasterDesktop.Properties.Resources.resources
+G:\github\MasterDesktop\MasterDesktop\MasterDesktop\obj\Debug\MasterDesktop.csproj.GenerateResource.Cache
+G:\github\MasterDesktop\MasterDesktop\MasterDesktop\obj\Debug\MasterDesktop.csproj.CoreCompileInputs.cache
+G:\github\MasterDesktop\MasterDesktop\MasterDesktop\bin\Debug\Мастер Сервис.exe.config
+G:\github\MasterDesktop\MasterDesktop\MasterDesktop\bin\Debug\Мастер Сервис.exe
+G:\github\MasterDesktop\MasterDesktop\MasterDesktop\bin\Debug\Мастер Сервис.pdb
+G:\github\MasterDesktop\MasterDesktop\MasterDesktop\obj\Debug\Мастер Сервис_MarkupCompile.cache
+G:\github\MasterDesktop\MasterDesktop\MasterDesktop\obj\Debug\Мастер Сервис_MarkupCompile.lref
+G:\github\MasterDesktop\MasterDesktop\MasterDesktop\obj\Debug\Мастер Сервис.g.resources
+G:\github\MasterDesktop\MasterDesktop\MasterDesktop\obj\Debug\Мастер Сервис.exe
+G:\github\MasterDesktop\MasterDesktop\MasterDesktop\obj\Debug\Мастер Сервис.pdb
+G:\github\MasterDesktop\MasterDesktop\MasterDesktop\bin\Debug\Мастер Сервис.exe.manifest
+G:\github\MasterDesktop\MasterDesktop\MasterDesktop\bin\Debug\Мастер Сервис.application
+G:\github\MasterDesktop\MasterDesktop\MasterDesktop\obj\Debug\Мастер Сервис.exe.manifest
+G:\github\MasterDesktop\MasterDesktop\MasterDesktop\obj\Debug\Мастер Сервис.application

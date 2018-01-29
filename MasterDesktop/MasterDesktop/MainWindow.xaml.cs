@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MasterDesktop.Lib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,10 @@ namespace MasterDesktop
     {
         public MainWindow()
         {
+            var c = new Connect();
+
+
+
             InitializeComponent();
         }
 

@@ -1,4 +1,3 @@
-G:\github\MasterDesktop\MasterDesktop\MasterDesktop\obj\Debug\MasterDesktop.csprojResolveAssemblyReference.cache
 G:\github\MasterDesktop\MasterDesktop\MasterDesktop\obj\Debug\MainWindow.g.cs
 G:\github\MasterDesktop\MasterDesktop\MasterDesktop\obj\Debug\App.g.cs
 G:\github\MasterDesktop\MasterDesktop\MasterDesktop\obj\Debug\MainWindow.baml

@@ -447,14 +447,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Мастер Сервис.exe" size="4810216">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Мастер Сервис.exe" size="4814312">
       <assemblyIdentity name="Мастер Сервис" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9Bn5lZvDqOqXTZRjl+LMgqqpt/QSWe4aj3unW80/wls=</dsig:DigestValue>
+        <dsig:DigestValue>LPVpXWN7VF8ZSThkPSV+KnElgMp1pZvLpPoj1EpUAKM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

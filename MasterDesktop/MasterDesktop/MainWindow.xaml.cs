@@ -1,4 +1,5 @@
 ﻿using MasterDesktop.Lib;
+using MasterDesktop.Lib.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,18 +22,32 @@ namespace MasterDesktop
     /// </summary>
     public partial class MainWindow : Window
     {
+        public List<Master> masters;
         public MainWindow()
         {
-            var c = new Connect();
-
+            var connect = new Connect();
+            masters = connect.GetMaster();
 
 
             InitializeComponent();
+
+            MASTERS.BeginInit();
+            MASTERS.ItemsSource = masters;
+            MASTERS.EndInit();
+
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+           
+        }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            MASTERS.BeginInit();
+            MASTERS.ItemsSource = masters;
+            MASTERS.EndInit();
         }
     }
 }

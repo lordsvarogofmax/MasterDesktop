@@ -25,8 +25,11 @@ namespace MasterDesktop
         public List<Master> masters;
         public MainWindow()
         {
-            var connect = new Connect();
-            masters = connect.GetMaster();
+            var adapter = new Adapter();
+
+            var M = adapter.GetMaster();
+            var S = adapter.GetSostzakaz();
+            var D = adapter.GetDeclarationSELECT(null);
 
 
             InitializeComponent();

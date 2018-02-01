@@ -99,13 +99,13 @@ namespace MasterDesktop.Lib
             return sostzakaz;
         }
 
-        public List<Declaration> GetDeclarationSELECT(string SELECT)
+        private List<Declaration> GetDeclarationSELECT(string SELECT)
         {
             FbConnection connection = connect.connection;
             List<Declaration> declarations = new List<Declaration>();
 
             //TEST
-            SELECT = "SELECT * FROM DECLARATION";
+            //SELECT = "SELECT * FROM DECLARATION";
             //TESt
 
             try
@@ -150,6 +150,22 @@ namespace MasterDesktop.Lib
             }
 
             return declarations;
+        }
+
+        public List<Declaration> GetDeclarationAll()
+        {
+            string SELECT = "SELECT * FROM DECLARATION";
+            List<Declaration> decl = GetDeclarationSELECT(SELECT);
+
+            return decl;
+        }
+
+        public List<Declaration> GetDeclarationDate(string year, string month, string day)
+        {
+            string SELECT = $"SELECT * FROM DECLARATION WHERE DECLDATA = '{day}-{month}-{year}'";
+            List<Declaration> decl = GetDeclarationSELECT(SELECT);
+
+            return decl;
         }
     }
 }

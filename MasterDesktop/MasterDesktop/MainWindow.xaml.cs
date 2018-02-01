@@ -23,13 +23,14 @@ namespace MasterDesktop
     public partial class MainWindow : Window
     {
         public List<Master> masters;
+        public Adapter adapter;
         public MainWindow()
         {
-            var adapter = new Adapter();
+            adapter = new Adapter();
 
-            var M = adapter.GetMaster();
-            var S = adapter.GetSostzakaz();
-            var D = adapter.GetDeclarationSELECT(null);
+            //var M = adapter.GetMaster();
+            //var S = adapter.GetSostzakaz();
+            //var D = adapter.GetDeclarationDate();
 
 
             InitializeComponent();
@@ -51,6 +52,44 @@ namespace MasterDesktop
             MASTERS.BeginInit();
             MASTERS.ItemsSource = masters;
             MASTERS.EndInit();
+        }
+
+        private void CALENDARDECLARATION_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Calendar cal = (Calendar)sender;
+            List<Declaration> ListDeclarations = new List<Declaration>();
+            string year = cal.SelectedDate.Value.Year.ToString();
+            string month = cal.SelectedDate.Value.Month.ToString();
+            string day = cal.SelectedDate.Value.Day.ToString();
+
+            LNAME.Content = $"{day}-{month}-{year}";
+
+            try
+            {
+                ListDeclarations = adapter.GetDeclarationDate(year, month, day);
+
+                MASTERS.BeginInit();
+                LISTZAKAZ.ItemsSource = ListDeclarations;
+                MASTERS.EndInit();
+
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            
+
+
+        }
+
+        private void LISTZAKAZ_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            Declaration decla = (Declaration)e.AddedItems[0];
         }
     }
 }

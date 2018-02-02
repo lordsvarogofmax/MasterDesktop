@@ -61,20 +61,24 @@ namespace MasterDesktop
             string year = cal.SelectedDate.Value.Year.ToString();
             string month = cal.SelectedDate.Value.Month.ToString();
             string day = cal.SelectedDate.Value.Day.ToString();
-
-            LNAME.Content = $"{day}-{month}-{year}";
+            LISTZAKAZ.ItemsSource = null;
+            STATUS.Content = null;
+            STREETLabel.Content = null;
 
             try
             {
+                //LISTZAKAZ.BeginInit();
                 ListDeclarations = adapter.GetDeclarationDate(year, month, day);
 
-                MASTERS.BeginInit();
+                
                 LISTZAKAZ.ItemsSource = ListDeclarations;
-                MASTERS.EndInit();
+                //LISTZAKAZ.EndInit();
 
+                //LNAME.BeginInit();
+                LNAME.Content = $"{day}-{month}-{year}";
+                //LNAME.BeginInit();
 
-
-
+                
 
             }
             catch (Exception ex)
@@ -88,8 +92,24 @@ namespace MasterDesktop
 
         private void LISTZAKAZ_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Declaration decla = (Declaration) (e.AddedItems.Count != 0 ? e.AddedItems[0] : null );
 
-            Declaration decla = (Declaration)e.AddedItems[0];
+            // ADRESS.DataContext = decla.
+            if (decla != null)
+            {
+                STATUS.Content = adapter.GetSostzakaz().FirstOrDefault(f => f.SOSTZAKAZID == decla.SOSTZAKAZID);
+
+                Street adress = adapter.GetAdressPODID(decla.PODCOD.ToString());
+
+                STREETLabel.Content = $"{adress.STREETNAME}. дом {adress.DOMN} {adress.DOML}";
+            }
+            else
+            {
+                STATUS.Content = null;
+                STREETLabel.Content = null;
+            }
+
         }
+
     }
 }

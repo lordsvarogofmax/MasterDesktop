@@ -104,10 +104,6 @@ namespace MasterDesktop.Lib
             FbConnection connection = connect.connection;
             List<Declaration> declarations = new List<Declaration>();
 
-            //TEST
-            //SELECT = "SELECT * FROM DECLARATION";
-            //TESt
-
             try
             {
                 connection.Open();
@@ -162,10 +158,44 @@ namespace MasterDesktop.Lib
 
         public List<Declaration> GetDeclarationDate(string year, string month, string day)
         {
-            string SELECT = $"SELECT * FROM DECLARATION WHERE DECLDATA = '{day}-{month}-{year}'";
+            string SELECT = $"SELECT * FROM DECLARATION WHERE DECLDATA = '{year}-{month}-{day}'";
             List<Declaration> decl = GetDeclarationSELECT(SELECT);
 
             return decl;
+        }
+
+        public Street GetAdressPODID(string ID)
+        {
+            FbConnection connection = connect.connection;
+            Street street = new Street();
+            string SELECT = $" SELECT  S.streetname, P.domn, P.doml FROM POD P LEFT JOIN STREET S ON P.podidstreet = S.streetid WHERE PODID = {ID}";
+
+            try
+            {
+                connection.Open();
+
+                FbTransaction transaction = connection.BeginTransaction();
+                FbCommand command = new FbCommand(SELECT, connection, transaction);
+                FbDataReader reader = command.ExecuteReader();
+
+
+
+                if (reader.Read())
+                {
+                    street.STREETNAME = reader.GetString(0);
+                    street.DOMN = reader.IsDBNull(1) ? (int?)null : reader.GetInt32(1);
+                    street.DOML = reader.GetString(2);
+                }
+
+                reader.Close();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                connection.Close();
+            }
+
+            return street;
         }
     }
 }

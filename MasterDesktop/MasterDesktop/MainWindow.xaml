@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Мастер Сервис" Height="456.6" Width="1000" ResizeMode="NoResize">
     <Grid HorizontalAlignment="Left" Height="447" VerticalAlignment="Top" Width="990" Margin="0,0,0,-15">
-        <Image Margin="0,0,-10,-10" Source="Websites.png" Stretch="Fill"/>
+        <Image Margin="0,1,-10,-11" Source="Websites.png" Stretch="Fill"/>
         <Button Content="Отправить" HorizontalAlignment="Left" Margin="751.001,378.749,0,0" VerticalAlignment="Top" Width="75" FontFamily="Jura" FontWeight="Bold" UseLayoutRounding="False" Cursor="Hand" ClickMode="Press" Foreground="White">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
@@ -28,7 +28,14 @@
                 </LinearGradientBrush>
             </TextBlock.OpacityMask>
         </TextBlock>
-        <ComboBox x:Name="LISTZAKAZ" HorizontalAlignment="Left" Margin="263,155,0,0" VerticalAlignment="Top" Width="300" Height="20" SelectionChanged="LISTZAKAZ_SelectionChanged"/>
+        <ComboBox x:Name="LISTZAKAZ" HorizontalAlignment="Left" Margin="263,155,0,0" VerticalAlignment="Top" Width="300" Height="20" SelectionChanged="LISTZAKAZ_SelectionChanged">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                    <GradientStop Color="#FFE5E5E5" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
         <DatePicker HorizontalAlignment="Left" Margin="714,147,0,0" VerticalAlignment="Top" Width="153" Height="23" FontFamily="Jura" FontWeight="Bold">
             <DatePicker.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
@@ -100,7 +107,6 @@
                 </LinearGradientBrush>
             </TextBlock.OpacityMask>
         </TextBlock>
-        <TextBox x:Name="STATUS" HorizontalAlignment="Left" Height="20" Margin="443,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="251,251,0,0" TextWrapping="Wrap" Text="Статус заявки" VerticalAlignment="Top" Width="138" FontFamily="Jura" FontWeight="ExtraBlack" FontSize="14" TextAlignment="Center" Foreground="White" RenderTransformOrigin="0.5,0.5">
             <TextBlock.OpacityMask>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -119,6 +125,9 @@
             </Button.Background>
         </Button>
         <Label x:Name="LNAME" Content="" HorizontalAlignment="Left" Margin="290,28,0,0" VerticalAlignment="Top" Height="49" Width="273" FontSize="16"/>
-        <TextBox x:Name="ADRESS" HorizontalAlignment="Left" Height="20" Margin="263,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+        <Label x:Name="_1123" Content="" HorizontalAlignment="Left" Margin="263,206,0,0" VerticalAlignment="Top" Height="20" Width="300" FontSize="16" Background="White"/>
+        <Label x:Name="ADRESS_Copy" Content="" HorizontalAlignment="Left" Margin="409,251,0,0" VerticalAlignment="Top" Height="20" Width="154" FontSize="16" Background="White"/>
+        <Label x:Name="STATUS" Content="" HorizontalAlignment="Left" Margin="409,248,0,0" VerticalAlignment="Top" Height="27" Width="162"/>
+        <Label x:Name="STREETLabel" Content="" HorizontalAlignment="Left" Margin="263,203,0,0" VerticalAlignment="Top" Width="300"/>
     </Grid>
 </Window>

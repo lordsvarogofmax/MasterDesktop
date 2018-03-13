@@ -447,14 +447,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Мастер Сервис.exe" size="4821992">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Мастер Сервис.exe" size="4827112">
       <assemblyIdentity name="Мастер Сервис" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>U8FJ36YeJ5kdBvmUOOSG2jhBqL3f+O9XGzMJWAwbBvc=</dsig:DigestValue>
+        <dsig:DigestValue>LUL/X9mz1zC7zeMWpjA6lqkylYcUZ2773SiKBMQl9gU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -467,13 +467,13 @@
       <dsig:DigestValue>FXkP72iqo34xrQ+htcEg9LwUXR9fhOvjiEOD7kw2mxI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Мастер Сервис.exe.config" size="19949">
+  <file name="Мастер Сервис.exe.config" size="20160">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>ASU/PCIofUOPs0oSnZaXqaPnLnE3VC+3jXaf/wmc/kk=</dsig:DigestValue>
+      <dsig:DigestValue>fhFm4g1xoj0sm8/dqdUuXoOk2SLKDtnnSRF1wYYryQs=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

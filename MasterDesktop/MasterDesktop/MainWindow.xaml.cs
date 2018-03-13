@@ -2,7 +2,9 @@
 using MasterDesktop.Lib.Data;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
 
 namespace MasterDesktop
 {
@@ -24,9 +27,12 @@ namespace MasterDesktop
     {
         public List<Master> masters;
         public Adapter adapter;
+        public Utility utility;
         public MainWindow()
         {
             adapter = new Adapter();
+            utility = new Utility();
+            masters = adapter.GetMaster();
 
             //var M = adapter.GetMaster();
             //var S = adapter.GetSostzakaz();
@@ -46,14 +52,17 @@ namespace MasterDesktop
            
         }
 
+        //Обновить базу
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            //var stat = utility.SetMaster(masters);
+            var master = utility.GetMaster();
+            //utility.DellMaster(master.FirstOrDefault());
+            var dec = utility.GetDeclaration();
 
-            MASTERS.BeginInit();
-            MASTERS.ItemsSource = masters;
-            MASTERS.EndInit();
         }
 
+        // Календарь
         private void CALENDARDECLARATION_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
         {
             Calendar cal = (Calendar)sender;
@@ -78,7 +87,7 @@ namespace MasterDesktop
                 LNAME.Content = $"{day}-{month}-{year}";
                 //LNAME.BeginInit();
 
-                
+                utility.SetDeclaration(ListDeclarations);
 
             }
             catch (Exception ex)

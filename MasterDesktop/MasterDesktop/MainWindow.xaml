@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="Мастер Сервис" Height="456.6" Width="1000" ResizeMode="NoResize">
     <Grid HorizontalAlignment="Left" Height="447" VerticalAlignment="Top" Width="990" Margin="0,0,0,-15">
-        <Image Margin="0,1,-10,-11" Source="Websites.png" Stretch="Fill"/>
+
+        <Image Margin="0,0,-10,-11" Source="Websites.png" Stretch="Fill"/>
         <Button Content="Отправить" HorizontalAlignment="Left" Margin="751.001,378.749,0,0" VerticalAlignment="Top" Width="75" FontFamily="Jura" FontWeight="Bold" UseLayoutRounding="False" Cursor="Hand" ClickMode="Press" Foreground="White">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
@@ -129,5 +130,16 @@
         <Label x:Name="ADRESS_Copy" Content="" HorizontalAlignment="Left" Margin="409,251,0,0" VerticalAlignment="Top" Height="20" Width="154" FontSize="16" Background="White"/>
         <Label x:Name="STATUS" Content="" HorizontalAlignment="Left" Margin="409,248,0,0" VerticalAlignment="Top" Height="27" Width="162"/>
         <Label x:Name="STREETLabel" Content="" HorizontalAlignment="Left" Margin="263,203,0,0" VerticalAlignment="Top" Width="300"/>
+        <Menu Background="{x:Null}">
+            <MenuItem Header="Файл" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF212121">
+                <MenuItem Header="Выход" HorizontalAlignment="Left" Click="MenuItem_Click_1"/>
+            </MenuItem>
+            <MenuItem Header="Опции" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF212121">
+                <MenuItem Header="Настройки" HorizontalAlignment="Left"/>
+            </MenuItem>
+            <MenuItem Header="?" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF212121">
+                <MenuItem Header="Справка" HorizontalAlignment="Left"/>
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>

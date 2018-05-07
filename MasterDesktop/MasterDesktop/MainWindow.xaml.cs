@@ -59,7 +59,6 @@ namespace MasterDesktop
             var master = utility.GetMaster();
             //utility.DellMaster(master.FirstOrDefault());
             var dec = utility.GetDeclaration();
-
         }
 
         // Календарь
@@ -120,5 +119,14 @@ namespace MasterDesktop
 
         }
 
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

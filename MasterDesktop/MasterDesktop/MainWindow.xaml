@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:MasterDesktop"
         mc:Ignorable="d"
         Title="Мастер Сервис" Height="456.6" Width="1000" ResizeMode="NoResize">
+    <Window.CommandBindings>
+        <CommandBinding Command="local:WindowCommands.Exit" Executed="Exit_Executed"/>
+    </Window.CommandBindings>
     <Grid HorizontalAlignment="Left" Height="447" VerticalAlignment="Top" Width="990" Margin="0,0,0,-15">
 
         <Image Margin="0,0,-10,-11" Source="Websites.png" Stretch="Fill"/>
@@ -132,10 +135,10 @@
         <Label x:Name="STREETLabel" Content="" HorizontalAlignment="Left" Margin="263,203,0,0" VerticalAlignment="Top" Width="300"/>
         <Menu Background="{x:Null}">
             <MenuItem Header="Файл" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF212121">
-                <MenuItem Header="Сервер" HorizontalAlignment="Left" Click="MenuItem_Click_1" Width="124"/>
-                <MenuItem Header="База" HorizontalAlignment="Left" Click="MenuItem_Click_1" Width="124"/>
+                <MenuItem Header="Сервер" HorizontalAlignment="Left" Width="124"/>
+                <MenuItem Header="База" HorizontalAlignment="Left" Width="124"/>
                 <Separator></Separator>
-                <MenuItem Header="Выход" HorizontalAlignment="Left" Click="MenuItem_Click_1" Width="124"/>
+                <MenuItem Header="Выход" HorizontalAlignment="Left" Command="local:WindowCommands.Exit" Width="124"/>
             </MenuItem>
             <MenuItem Header="Опции" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF212121">
                 <MenuItem Header="Настройки" HorizontalAlignment="Left" Width="144"/>

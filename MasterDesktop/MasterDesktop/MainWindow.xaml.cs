@@ -38,7 +38,7 @@ namespace MasterDesktop
             //var S = adapter.GetSostzakaz();
             //var D = adapter.GetDeclarationDate();
 
-
+            //ApplicationCommands
             InitializeComponent();
 
             MASTERS.BeginInit();
@@ -121,12 +121,20 @@ namespace MasterDesktop
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        private void Exit_Executed(object sender, ExecutedRoutedEventArgs e) => Close();
+
+
+    }
+
+    public class WindowCommands
+    {
+        static WindowCommands()
         {
-            Environment.Exit(0);
+            Exit = new RoutedCommand("Exit", typeof(MainWindow));
         }
+        public static RoutedCommand Exit { get; set; }
     }
 }

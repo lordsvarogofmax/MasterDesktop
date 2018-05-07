@@ -36,40 +36,14 @@ namespace MasterDesktop.Lib
         }
 
         //http://127.0.0.1:5000/
-        public string url()
-        {
-            return $"{PROTOCOL}://{HOST}:{PORT}";
-        }
-
-        private string urlMasterUserAddList(string username = USERNAME)
-        {
-            return $"{url()}/master/{username}/add/list/{MD5}";
-        }
-
-        private string urlMasterUserDellList(string username = USERNAME)
-        {
-            return $"{url()}/master/{username}/dell/list/{MD5}";
-        }
-
-        private string urlMasterUserGetList(string username = USERNAME)
-        {
-            return $"{url()}/master/{username}/get/list/{MD5}";
-        }
-
-        private string urlDeclarationUserAddList(string username = USERNAME)
-        {
-            return $"{url()}/declaration/{username}/add/list/{MD5}";
-        }
-
-        private string urlDeclarationUserDellList(string username = USERNAME)
-        {
-            return $"{url()}/declaration/{username}/dell/list/{MD5}";
-        }
-
-        private string urlDeclarationUserGetList(string username = USERNAME)
-        {
-            return $"{url()}/declaration/{username}/get/list/{MD5}";
-        }
+        public string url() => $"{PROTOCOL}://{HOST}:{PORT}";
+        
+        private string urlMasterUserAddList(string username = USERNAME) => $"{url()}/master/{username}/add/list/{MD5}";
+        private string urlMasterUserDellList(string username = USERNAME) => $"{url()}/master/{username}/dell/list/{MD5}";
+        private string urlMasterUserGetList(string username = USERNAME) => $"{url()}/master/{username}/get/list/{MD5}";
+        private string urlDeclarationUserAddList(string username = USERNAME) => $"{url()}/declaration/{username}/add/list/{MD5}";
+        private string urlDeclarationUserDellList(string username = USERNAME) => $"{url()}/declaration/{username}/dell/list/{MD5}";
+        private string urlDeclarationUserGetList(string username = USERNAME) => $"{url()}/declaration/{username}/get/list/{MD5}";
 
         private string RequestPOST(string url, string json = null)
         {
@@ -134,10 +108,7 @@ namespace MasterDesktop.Lib
             }
         }
 
-        public List<Static> SetMaster(Master master)
-        {
-            return SetMaster(new List<Master>() { master });
-        }
+        public List<Static> SetMaster(Master master) => SetMaster(new List<Master>() { master });
 
         public List<Static> DellMaster(List<Master> masters)
         {
@@ -156,11 +127,8 @@ namespace MasterDesktop.Lib
             }
         }
 
-        public List<Static> DellMaster(Master master)
-        {
-            return DellMaster(new List<Master>() { master });
-        }
-
+        public List<Static> DellMaster(Master master) => DellMaster(new List<Master>() { master });
+        
         public List<Declaration> GetDeclaration()
         {
             string json = null;
@@ -194,10 +162,7 @@ namespace MasterDesktop.Lib
             }
         }
 
-        public List<Static> SetDeclaration(Declaration declaration)
-        {
-            return SetDeclaration(new List<Declaration>() { declaration });
-        }
+        public List<Static> SetDeclaration(Declaration declaration) => SetDeclaration(new List<Declaration>() { declaration });
 
         public List<Static> DellDeclaration(List<Declaration> declarations)
         {
@@ -216,9 +181,6 @@ namespace MasterDesktop.Lib
             }
         }
 
-        public List<Static> DellDeclaration(Declaration declaration)
-        {
-            return DellDeclaration(new List<Declaration>() { declaration });
-        }
+        public List<Static> DellDeclaration(Declaration declaration) => DellDeclaration(new List<Declaration>() { declaration });
     }
 }

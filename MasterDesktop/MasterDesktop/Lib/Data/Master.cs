@@ -23,9 +23,7 @@ namespace MasterDesktop.Lib.Data
         public string TELEFON { get; set; }
         public string FOTO { get; set; }
 
-        public override string ToString()
-        {
-            return $"{SHOTNAMEMASTER}";
-        }
+        public override string ToString() => $"{SHOTNAMEMASTER}";
+
     }
 }

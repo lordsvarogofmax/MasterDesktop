@@ -19,9 +19,7 @@ namespace MasterDesktop.Lib.Data
         public string Error { get; set; }
         public string Write { get; set; }
 
-        public override string ToString()
-        {
-            return $"{Success}:{NameTable}:{IdTable}:{Operator}:{Text}";
-        }
+        public override string ToString() => $"{Success}:{NameTable}:{IdTable}:{Operator}:{Text}";
+        
     }
 }

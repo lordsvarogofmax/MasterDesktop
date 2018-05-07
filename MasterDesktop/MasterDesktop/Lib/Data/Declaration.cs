@@ -24,9 +24,7 @@ namespace MasterDesktop.Lib.Data
         public DateTime? ZAPLANIR { get; set; }
         public string USERNAME { get; set; }
 
-        public override string ToString()
-        {
-            return $"{FIO}:{TELEFON}";
-        }
+        public override string ToString() => $"{FIO}:{TELEFON}";
+
     }
 }

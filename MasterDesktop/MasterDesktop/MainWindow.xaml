@@ -132,13 +132,19 @@
         <Label x:Name="STREETLabel" Content="" HorizontalAlignment="Left" Margin="263,203,0,0" VerticalAlignment="Top" Width="300"/>
         <Menu Background="{x:Null}">
             <MenuItem Header="Файл" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF212121">
-                <MenuItem Header="Выход" HorizontalAlignment="Left" Click="MenuItem_Click_1"/>
+                <MenuItem Header="Сервер" HorizontalAlignment="Left" Click="MenuItem_Click_1" Width="124"/>
+                <MenuItem Header="База" HorizontalAlignment="Left" Click="MenuItem_Click_1" Width="124"/>
+                <Separator></Separator>
+                <MenuItem Header="Выход" HorizontalAlignment="Left" Click="MenuItem_Click_1" Width="124"/>
             </MenuItem>
             <MenuItem Header="Опции" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF212121">
-                <MenuItem Header="Настройки" HorizontalAlignment="Left"/>
+                <MenuItem Header="Настройки" HorizontalAlignment="Left" Width="144"/>
+                <MenuItem Header="Мастера" HorizontalAlignment="Left" Width="144"/>
             </MenuItem>
             <MenuItem Header="?" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF212121">
-                <MenuItem Header="Справка" HorizontalAlignment="Left"/>
+                <MenuItem Header="Справка" HorizontalAlignment="Left" Width="168"  />
+                <Separator></Separator>
+                <MenuItem Header="О программе..." HorizontalAlignment="Left"/>
             </MenuItem>
         </Menu>
     </Grid>

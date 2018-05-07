@@ -12,9 +12,6 @@ namespace MasterDesktop.Lib.Data
         public string SOSTZAKAZ { get; set; }
         public int? COLOR { get; set; }
 
-        public override string ToString()
-        {
-            return $"{SOSTZAKAZ}";
-        }
+        public override string ToString() => $"{SOSTZAKAZ}";
     }
 }

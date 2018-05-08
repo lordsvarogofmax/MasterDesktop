@@ -142,6 +142,7 @@
     <Compile Include="Lib\Adapter.cs" />
     <Compile Include="Lib\Connect.cs" />
     <Compile Include="Lib\Data\Declaration.cs" />
+    <Compile Include="Lib\Data\JsonConfig.cs" />
     <Compile Include="Lib\Data\Master.cs" />
     <Compile Include="Lib\Data\Sostzakaz.cs" />
     <Compile Include="Lib\Data\Static.cs" />

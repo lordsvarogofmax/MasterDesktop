@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 using System.Configuration;
 using FirebirdSql.Data.FirebirdClient;
 using MasterDesktop.Lib.Data;
+using NLog;
 
 namespace MasterDesktop.Lib
 {
     public class Adapter
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         public static Connect connect;
 
         public Adapter()
@@ -58,6 +61,7 @@ namespace MasterDesktop.Lib
             }
             catch (Exception ex)
             {
+                logger.Error(ex.ToString());
                 connection.Close();
             }
 
@@ -93,6 +97,7 @@ namespace MasterDesktop.Lib
             }
             catch (Exception ex)
             {
+                logger.Error(ex.ToString());
                 connection.Close();
             }
 
@@ -142,6 +147,7 @@ namespace MasterDesktop.Lib
             }
             catch (Exception ex)
             {
+                logger.Error(ex.ToString());
                 connection.Close();
             }
 
@@ -192,6 +198,7 @@ namespace MasterDesktop.Lib
             }
             catch (Exception ex)
             {
+                logger.Error(ex.ToString());
                 connection.Close();
             }
 

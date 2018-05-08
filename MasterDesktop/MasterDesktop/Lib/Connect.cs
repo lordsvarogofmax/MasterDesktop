@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 using System.Configuration;
 using FirebirdSql.Data.FirebirdClient;
 using MasterDesktop.Lib.Data;
+using NLog;
 
 namespace MasterDesktop.Lib
 {
     public class Connect
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
         public string Charset;
         public string UserID;
         public string Password;

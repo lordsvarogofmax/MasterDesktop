@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace MasterDesktop.Lib.Forms
     /// </summary>
     public partial class FormSettings : Window
     {
-
+        private static Logger logger = LogManager.GetCurrentClassLogger();
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);

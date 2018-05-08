@@ -8,8 +8,9 @@ namespace MasterDesktop.Lib.Data
 {
     public class JsonConfig
     {
-        public string HostServis { get; set; }
-        public string PortServis { get; set; }
+        public string Servis_Host { get; set; }
+        public string Servis_Port { get; set; }
+        public string Servis_MD5 { get; set; }
         public string DB_Charset { get; set; }
         public string DB_User { get; set; }
         public string DB_Password { get; set; }

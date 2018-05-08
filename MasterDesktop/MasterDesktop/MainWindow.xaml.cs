@@ -18,7 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Newtonsoft.Json;
-
+using NLog;
 
 namespace MasterDesktop
 {
@@ -29,11 +29,10 @@ namespace MasterDesktop
     {
         public List<Master> masters;
         public Adapter adapter;
-        public Utility utility;
+        private static Logger logger = LogManager.GetCurrentClassLogger();
         public MainWindow()
         {
             adapter = new Adapter();
-            utility = new Utility();
             masters = adapter.GetMaster();
 
             //var M = adapter.GetMaster();
@@ -58,9 +57,9 @@ namespace MasterDesktop
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //var stat = utility.SetMaster(masters);
-            var master = utility.GetMaster();
+            var master = Utility.GetMaster();
             //utility.DellMaster(master.FirstOrDefault());
-            var dec = utility.GetDeclaration();
+            var dec = Utility.GetDeclaration();
         }
 
         // Календарь
@@ -88,12 +87,12 @@ namespace MasterDesktop
                 LNAME.Content = $"{day}-{month}-{year}";
                 //LNAME.BeginInit();
 
-                utility.SetDeclaration(ListDeclarations);
+                Utility.SetDeclaration(ListDeclarations);
 
             }
             catch (Exception ex)
             {
-
+                logger.Error(ex.ToString());
             }
             
 

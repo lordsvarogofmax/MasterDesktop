@@ -17,18 +17,19 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Newtonsoft.Json;
 using System.Configuration;
-
+using NLog;
 namespace MasterDesktop.Lib
 {
-    public class Utility
+    public static class Utility
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
         public static string HOST = "";
         public static string PORT = "";
         public static string PROTOCOL = "";
         public const string MD5 = "d55561f495b46e262733602ae825465d";
         public const string USERNAME = "ROOT";
 
-        public Utility()
+        static Utility()
         {
             HOST = ConfigurationManager.AppSettings["Host"];
             PORT = ConfigurationManager.AppSettings["Port"];
@@ -36,16 +37,16 @@ namespace MasterDesktop.Lib
         }
 
         //http://127.0.0.1:5000/
-        public string url() => $"{PROTOCOL}://{HOST}:{PORT}";
-        
-        private string urlMasterUserAddList(string username = USERNAME) => $"{url()}/master/{username}/add/list/{MD5}";
-        private string urlMasterUserDellList(string username = USERNAME) => $"{url()}/master/{username}/dell/list/{MD5}";
-        private string urlMasterUserGetList(string username = USERNAME) => $"{url()}/master/{username}/get/list/{MD5}";
-        private string urlDeclarationUserAddList(string username = USERNAME) => $"{url()}/declaration/{username}/add/list/{MD5}";
-        private string urlDeclarationUserDellList(string username = USERNAME) => $"{url()}/declaration/{username}/dell/list/{MD5}";
-        private string urlDeclarationUserGetList(string username = USERNAME) => $"{url()}/declaration/{username}/get/list/{MD5}";
+        static string url() => $"{PROTOCOL}://{HOST}:{PORT}";
 
-        private string RequestPOST(string url, string json = null)
+        private static string urlMasterUserAddList(string username = USERNAME) => $"{url()}/master/{username}/add/list/{MD5}";
+        private static string urlMasterUserDellList(string username = USERNAME) => $"{url()}/master/{username}/dell/list/{MD5}";
+        private static string urlMasterUserGetList(string username = USERNAME) => $"{url()}/master/{username}/get/list/{MD5}";
+        private static string urlDeclarationUserAddList(string username = USERNAME) => $"{url()}/declaration/{username}/add/list/{MD5}";
+        private static string urlDeclarationUserDellList(string username = USERNAME) => $"{url()}/declaration/{username}/dell/list/{MD5}";
+        private static string urlDeclarationUserGetList(string username = USERNAME) => $"{url()}/declaration/{username}/get/list/{MD5}";
+
+        public static string RequestPOST(string url, string json = null)
         {
             try
             {
@@ -71,12 +72,13 @@ namespace MasterDesktop.Lib
             catch (Exception ex)
             {
                 //Ошибка запроса
+                logger.Error(ex.ToString());
             }
 
             return null;
         }
 
-        public List<Master> GetMaster()
+        public static List<Master> GetMaster()
         {
             string json = null;
             List<Master> masters = new List<Master>();
@@ -88,11 +90,12 @@ namespace MasterDesktop.Lib
             }
             catch (Exception ex)
             {
+                logger.Error(ex.ToString());
                 return new List<Master>();
             }
         }
 
-        public List<Static> SetMaster(List<Master> masters)
+        public static List<Static> SetMaster(List<Master> masters)
         {
             List<Static> statics = new List<Static>();
             try
@@ -104,13 +107,14 @@ namespace MasterDesktop.Lib
             }
             catch (Exception ex)
             {
+                logger.Error(ex.ToString());
                 return new List<Static>();
             }
         }
 
-        public List<Static> SetMaster(Master master) => SetMaster(new List<Master>() { master });
+        public static List<Static> SetMaster(Master master) => SetMaster(new List<Master>() { master });
 
-        public List<Static> DellMaster(List<Master> masters)
+        public static List<Static> DellMaster(List<Master> masters)
         {
             List<Static> statics = new List<Static>();
 
@@ -123,13 +127,14 @@ namespace MasterDesktop.Lib
             }
             catch (Exception ex)
             {
+                logger.Error(ex.ToString());
                 return new List<Static>();
             }
         }
 
-        public List<Static> DellMaster(Master master) => DellMaster(new List<Master>() { master });
-        
-        public List<Declaration> GetDeclaration()
+        public static List<Static> DellMaster(Master master) => DellMaster(new List<Master>() { master });
+
+        public static List<Declaration> GetDeclaration()
         {
             string json = null;
             List<Declaration> valueList = new List<Declaration>();
@@ -141,11 +146,12 @@ namespace MasterDesktop.Lib
             }
             catch (Exception ex)
             {
+                logger.Error(ex.ToString());
                 return new List<Declaration>();
             }
         }
 
-        public List<Static> SetDeclaration(List<Declaration> declarations)
+        public static List<Static> SetDeclaration(List<Declaration> declarations)
         {
             List<Static> statics = new List<Static>();
             
@@ -158,13 +164,14 @@ namespace MasterDesktop.Lib
             }
             catch (Exception ex)
             {
+                logger.Error(ex.ToString());
                 return new List<Static>();
             }
         }
 
-        public List<Static> SetDeclaration(Declaration declaration) => SetDeclaration(new List<Declaration>() { declaration });
+        public static List<Static> SetDeclaration(Declaration declaration) => SetDeclaration(new List<Declaration>() { declaration });
 
-        public List<Static> DellDeclaration(List<Declaration> declarations)
+        public static List<Static> DellDeclaration(List<Declaration> declarations)
         {
             List<Static> statics = new List<Static>();
             
@@ -177,10 +184,11 @@ namespace MasterDesktop.Lib
             }
             catch (Exception ex)
             {
+                logger.Error(ex.ToString());
                 return new List<Static>();
             }
         }
 
-        public List<Static> DellDeclaration(Declaration declaration) => DellDeclaration(new List<Declaration>() { declaration });
+        public static List<Static> DellDeclaration(Declaration declaration) => DellDeclaration(new List<Declaration>() { declaration });
     }
 }

@@ -127,6 +127,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Lib\Forms\FormSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -142,6 +146,9 @@
     <Compile Include="Lib\Data\Sostzakaz.cs" />
     <Compile Include="Lib\Data\Static.cs" />
     <Compile Include="Lib\Data\Street.cs" />
+    <Compile Include="Lib\Forms\FormSettings.xaml.cs">
+      <DependentUpon>FormSettings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Lib\Utility.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

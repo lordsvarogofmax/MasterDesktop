@@ -1,71 +1,7 @@
-MasterDesktop/MasterDesktop/obj/Debug/MasterDesktop.csproj.CoreCompileInputs.cache
-MasterDesktop/MasterDesktop/obj/Debug/Мастер Сервис_MarkupCompile.i.cache
-postgresql/texts.py
-postgresql/testSTR.py
-postgresql/test.py
-postgresql/start.sh
-postgresql/requirements.txt
-postgresql/main.py
-postgresql/logs/log2017-11-03-11-05-29.log
-postgresql/logs/log2017-11-03-11-05-28.log
-postgresql/logs/log2017-11-03-11-05-27.log
-postgresql/logs/log2017-11-03-11-03-15.log
-postgresql/imgur.py
-postgresql/func.py
-postgresql/alert_system.py
-postgresql/__pycache__/texts.cpython-36.pyc
-postgresql/__pycache__/imgur.cpython-36.pyc
-postgresql/__pycache__/func.cpython-36.pyc
-postgresql/__pycache__/func.cpython-34.pyc
-postgresql/__pycache__/alert_system.cpython-36.pyc
-postgresql/__pycache__/SQLQueries.cpython-36.pyc
-postgresql/__pycache__/SQLQueries.cpython-34.pyc
-postgresql/__pycache__/DataBase.cpython-36.pyc
-postgresql/__pycache__/DataBase.cpython-34.pyc
-postgresql/__init__.py
-postgresql/SQLQueries.py
-postgresql/QR.jpg
-postgresql/Procfile
-postgresql/DataBase.py
-postgresql/.idea/workspace.xml
-postgresql/.idea/postgresql.iml
-postgresql/.idea/modules.xml
-postgresql/.idea/misc.xml
-postgresql/.func.py.swp
-postgresql/.func.py.swo
-postgresql/.func.py.swn
-blockchain.info/runtime.txt
-blockchain.info/requirements.txt
-blockchain.info/blockchain.info.py
-blockchain.info/blockchain.info.log
-blockchain.info/SQLAlchemyData.py
-blockchain.info/README.md
-blockchain.info/Procfile
-blockchain.info/DBSTAT.db
-MasterDesktop/MasterDesktop/obj/Debug/Мастер Сервис.pdb
-MasterDesktop/MasterDesktop/obj/Debug/Мастер Сервис.g.resources
-MasterDesktop/MasterDesktop/obj/Debug/Мастер Сервис.exe.manifest
-MasterDesktop/MasterDesktop/obj/Debug/Мастер Сервис.exe
-MasterDesktop/MasterDesktop/obj/Debug/Мастер Сервис.application
-MasterDesktop/MasterDesktop/obj/Debug/MainWindow.g.i.cs
-MasterDesktop/MasterDesktop/obj/Debug/MainWindow.g.cs
-MasterDesktop/MasterDesktop/obj/Debug/MainWindow.baml
-MasterDesktop/MasterDesktop/bin/Debug/Мастер Сервис.pdb
-MasterDesktop/MasterDesktop/bin/Debug/Мастер Сервис.exe.manifest
-MasterDesktop/MasterDesktop/bin/Debug/Мастер Сервис.exe
-MasterDesktop/MasterDesktop/bin/Debug/Мастер Сервис.application
-MasterDesktop/MasterDesktop/bin/Debug/app.publish/Мастер Сервис.exe
-MasterDesktop/.vs/MasterDesktop/v15/Server/sqlite3/storage.ide-wal
-MasterDesktop/.vs/MasterDesktop/v15/Server/sqlite3/storage.ide-shm
-MasterDesktop/.vs/MasterDesktop/v15/Server/sqlite3/storage.ide
-MasterDesktop/.vs/MasterDesktop/v15/.suo
-MasterDesktop/MasterDesktop/obj/Debug/Lib/Forms/formSettings.g.i.cs
-MasterDesktop/MasterDesktop/obj/Debug/Lib/Forms/formSettings.g.cs
-MasterDesktop/MasterDesktop/obj/Debug/Lib/Forms/formSettings.baml
-MasterDesktop/MasterDesktop/obj/Debug/Мастер Сервис_MarkupCompile.cache
-MasterDesktop/MasterDesktop/obj/Debug/MasterDesktop.csproj.FileListAbsolute.txt
-MasterDesktop/MasterDesktop/obj/Debug/Мастер Сервис_MarkupCompile.lref
-MasterDesktop/MasterDesktop/obj/Debug/Мастер Сервис_MarkupCompile.i.lref
+postgresql/
+blockchain.info/
+MasterDesktop/.vs/
+MasterDesktop/MasterDesktop/obj/
 MasterDesktop/MasterDesktop/obj/Debug/
 MasterDesktop/packages/
 MasterDesktop/MasterDesktop/bin/

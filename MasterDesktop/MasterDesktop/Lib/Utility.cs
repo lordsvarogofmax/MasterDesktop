@@ -23,17 +23,75 @@ namespace MasterDesktop.Lib
     public static class Utility
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
+        public static JsonConfig config;
         public static string HOST = "";
         public static string PORT = "";
         public static string PROTOCOL = "";
         public const string MD5 = "d55561f495b46e262733602ae825465d";
         public const string USERNAME = "ROOT";
+        public static string PathJsonConfig;
 
         static Utility()
         {
-            HOST = ConfigurationManager.AppSettings["Host"];
-            PORT = ConfigurationManager.AppSettings["Port"];
-            PROTOCOL = ConfigurationManager.AppSettings["Protocol"];
+            PathJsonConfig = $"{Environment.CurrentDirectory}\\JsonConfig.json";
+        }
+
+        private static bool setJsonConfig()
+        {
+            if (System.IO.File.Exists(PathJsonConfig))
+            {
+                try
+                {
+                    string json = System.IO.File.ReadAllText(PathJsonConfig, Encoding.UTF8);
+                    config = JsonConvert.DeserializeObject<JsonConfig>(json);
+                    return true;
+                }
+                catch(Exception ex)
+                {
+                    config = new JsonConfig();
+                    logger.Error(ex.ToString());
+                    return false;
+                }
+
+            }
+            else
+            {
+                try
+                {
+                    config = new JsonConfig();
+                    string json = Newtonsoft.Json.JsonConvert.SerializeObject(config);
+                    System.IO.File.WriteAllText(PathJsonConfig, json, Encoding.UTF8);
+                    return false;
+                }
+                catch(Exception ex)
+                {
+                    logger.Error(ex.ToString());
+                    return false;
+                }
+            }
+        }
+        public static bool LoadSetting()
+        {
+            bool res = setJsonConfig();
+            HOST = config.server.Host;
+            PORT = config.server.Port;
+            PROTOCOL = config.server.Protocol;
+            return res;
+        }
+
+        public static bool WrireSetting()
+        {
+            try
+            {
+                string json = Newtonsoft.Json.JsonConvert.SerializeObject(config);
+                System.IO.File.WriteAllText(PathJsonConfig, json, Encoding.UTF8);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex.ToString());
+                return false;
+            }
         }
 
         //http://127.0.0.1:5000/

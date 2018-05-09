@@ -13,42 +13,44 @@ namespace MasterDesktop.Lib
     public class Connect
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
-        public string Charset;
-        public string UserID;
-        public string Password;
-        public string Database;
-        public string ServerType;
         private FbConnectionStringBuilder conn;
         public FbConnection connection;
+        public static bool isConnect = false;
 
-        public Connect()
+        public Connect(JsonConfig config)
         {
-            Charset = ConfigurationManager.AppSettings["Charset"];
-            UserID = ConfigurationManager.AppSettings["UserID"];
-            Password = ConfigurationManager.AppSettings["Password"];
-            Database = ConfigurationManager.AppSettings["Database"];
-            ServerType = ConfigurationManager.AppSettings["ServerType"];
+            StartConnect(config);
+        }
 
-
+        public bool StartConnect(JsonConfig config)
+        {
             conn = new FbConnectionStringBuilder
             {
-                Charset = Charset,
-                UserID = UserID,
-                Password = Password,
-                Database = Database,
+                Charset = config.db.Charset,
+                UserID = config.db.User,
+                Password = config.db.Password,
+                Database = config.db.Connect,
                 ServerType = 0
             };
 
+            isConnect =  _StartConnet(conn);
+            return isConnect;
+        }
+
+        private bool _StartConnet(FbConnectionStringBuilder conn)
+        {
             try
             {
                 connection = new FbConnection(conn.ToString());
                 connection.Open();
                 connection.Close();
+                return true;
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Ошибка подлючения к ДБ {ex.ToString()}");
+                return false;
             }
-        } 
+        }
     }
 }

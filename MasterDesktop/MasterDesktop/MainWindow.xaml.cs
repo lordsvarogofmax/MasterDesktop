@@ -32,7 +32,11 @@ namespace MasterDesktop
         private static Logger logger = LogManager.GetCurrentClassLogger();
         public MainWindow()
         {
-            adapter = new Adapter();
+            bool isLoadSetting = Utility.LoadSetting();
+
+
+
+            adapter = new Adapter(Utility.config);
             masters = adapter.GetMaster();
 
             //var M = adapter.GetMaster();

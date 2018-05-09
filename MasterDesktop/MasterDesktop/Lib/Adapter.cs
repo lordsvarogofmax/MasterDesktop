@@ -16,9 +16,14 @@ namespace MasterDesktop.Lib
 
         public static Connect connect;
 
-        public Adapter()
+        public Adapter(JsonConfig config)
         {
-            connect = new Connect();
+            connect = new Connect(config);
+        }
+
+        public bool reConnet(JsonConfig config)
+        {
+            return connect.StartConnect(config);
         }
 
         public List<Master> GetMaster()

@@ -126,18 +126,33 @@ namespace MasterDesktop
 
         private void Exit_Executed(object sender, ExecutedRoutedEventArgs e) => Close();
 
+        private void OpenSettings_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            FormSettings form = new FormSettings();
+            form.Owner = this;
+            form.ShowDialog();
+        }
+
+        private void OpenServer_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            FormServer form = new FormServer();
+            form.Owner = this;
+            form.ShowDialog();
+        }
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            FormSettings fs = new FormSettings();
-            fs.Owner = this;
-            //this.Hide();
-            fs.ShowDialog();
+
         }
     }
 
     public class WindowCommands
     {
         public static RoutedCommand Exit { get; set; } = new RoutedCommand("Exit", typeof(MainWindow));
-        
+
+        public static RoutedCommand OpenSetting { get; set; } = new RoutedCommand("OpenSettings", typeof(MainWindow));
+
+        public static RoutedCommand OpenServer { get; set; } = new RoutedCommand("OpenServer", typeof(MainWindow));
+
     }
 }

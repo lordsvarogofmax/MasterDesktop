@@ -27,7 +27,7 @@ namespace MasterDesktop.Lib
         public static string HOST = "";
         public static string PORT = "";
         public static string PROTOCOL = "";
-        public const string MD5 = "d55561f495b46e262733602ae825465d";
+        public static string MD5;
         public const string USERNAME = "ROOT";
         public static string PathJsonConfig;
 
@@ -76,7 +76,13 @@ namespace MasterDesktop.Lib
             HOST = config.server.Host;
             PORT = config.server.Port;
             PROTOCOL = config.server.Protocol;
+            MD5 = config.server.MD5;
             return res;
+        }
+
+        public static bool ConnetcService()
+        {
+            return false;
         }
 
         public static bool WrireSetting()

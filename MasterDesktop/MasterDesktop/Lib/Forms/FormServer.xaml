@@ -5,18 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MasterDesktop.Lib.Forms"
         mc:Ignorable="d"
-        Title="Настройки сервера" Height="292.188" Width="466.406">
-    <Grid Margin="0,0,-20,-13">
-        <Button Content="Отмена" HorizontalAlignment="Left" Margin="360,226,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.876,0.342"/>
-        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="270,226,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Сбросить" HorizontalAlignment="Left" Margin="180,226,0,0" VerticalAlignment="Top" Width="75"/>
+        Title="Настройки сервера" Height="311.211" Width="466.406">
+    <Grid Margin="0,0,2,-1">
+        <Button Content="Отмена" HorizontalAlignment="Left" Margin="360,241,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.876,0.342" Click="Button_Click"/>
+        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="270,241,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="Сбросить" HorizontalAlignment="Left" Margin="180,241,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
         <TextBox x:Name="textBox_IP_Servis" HorizontalAlignment="Left" Height="23" Margin="154,35,0,0" TextWrapping="Wrap" Text="127.0.0.1" VerticalAlignment="Top" Width="258"/>
-        <Label Content="IP адрес сервиса" HorizontalAlignment="Left" Margin="18,32,0,0" VerticalAlignment="Top"/>
-        <Label Content="Port сервиса" HorizontalAlignment="Left" Margin="18,77,0,0" VerticalAlignment="Top"/>
-        <Label Content="MD5 ключ сервера" HorizontalAlignment="Left" Margin="18,120,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Ip_Server" Content="IP адрес сервиса" HorizontalAlignment="Left" Margin="18,32,0,0" VerticalAlignment="Top" Foreground="Black"/>
+        <Label x:Name="label_Port_Server" Content="Port сервиса" HorizontalAlignment="Left" Margin="18,77,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_MD5_Server" Content="MD5 ключ сервера" HorizontalAlignment="Left" Margin="18,120,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="textBox_Port_Servis" HorizontalAlignment="Left" Height="23" Margin="154,79,0,0" TextWrapping="Wrap" Text="5000" VerticalAlignment="Top" Width="258"/>
         <TextBox x:Name="textBox_MD5_Servis" HorizontalAlignment="Left" Height="23" Margin="154,120,0,0" TextWrapping="Wrap" Text="d55561f495b46e262733602ae825465d" VerticalAlignment="Top" Width="258"/>
-        <Button Content="Проверить соединение" HorizontalAlignment="Left" Margin="18,226,0,0" VerticalAlignment="Top" Width="144"/>
+        <Button Content="Проверить соединение" HorizontalAlignment="Left" Margin="18,241,0,0" VerticalAlignment="Top" Width="144" Click="Button_Click_3"/>
+        <Label x:Name="label_Info_Server" Content="" HorizontalAlignment="Left" Margin="18,201,0,0" VerticalAlignment="Top" Width="394"/>
+        <Label Content="Протокол обмена" HorizontalAlignment="Left" Margin="18,163,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="combobox_Protocol_Server" HorizontalAlignment="Left" Margin="154,163,0,0" VerticalAlignment="Top" Width="120" IsSynchronizedWithCurrentItem="True" SelectionChanged="combobox_Protocol_Server_SelectionChanged">
+            <ComboBoxItem Content="HTTP" IsSelected="True"/>
+            <ComboBoxItem Content="HTTPS"/>
+        </ComboBox>
 
     </Grid>
 </Window>

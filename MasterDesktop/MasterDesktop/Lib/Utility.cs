@@ -18,6 +18,8 @@ using System.Windows.Shapes;
 using Newtonsoft.Json;
 using System.Configuration;
 using NLog;
+using System.Text.RegularExpressions;
+
 namespace MasterDesktop.Lib
 {
     public static class Utility
@@ -30,6 +32,11 @@ namespace MasterDesktop.Lib
         public static string MD5;
         public const string USERNAME = "ROOT";
         public static string PathJsonConfig;
+
+        public static Regex IPAdress = new Regex(@"^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$", RegexOptions.IgnoreCase);
+        public static Regex PortAdress = new Regex(@"^\d+$", RegexOptions.IgnoreCase);
+        public static Regex MD5Adress = new Regex(@"^[a-f0-9]{32}$", RegexOptions.IgnoreCase);
+        private static Match match;
 
         static Utility()
         {
@@ -46,7 +53,7 @@ namespace MasterDesktop.Lib
                     config = JsonConvert.DeserializeObject<JsonConfig>(json);
                     return true;
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     config = new JsonConfig();
                     logger.Error(ex.ToString());
@@ -63,7 +70,7 @@ namespace MasterDesktop.Lib
                     System.IO.File.WriteAllText(PathJsonConfig, json, Encoding.UTF8);
                     return false;
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     logger.Error(ex.ToString());
                     return false;
@@ -99,9 +106,11 @@ namespace MasterDesktop.Lib
                 return false;
             }
         }
+        public static void SetSettingServer(Server s) => config.server = s;
 
         //http://127.0.0.1:5000/
         static string url() => $"{PROTOCOL}://{HOST}:{PORT}";
+        static string url(string protocol, string host, string port) => $"{protocol}://{host}:{port}";
 
         private static string urlMasterUserAddList(string username = USERNAME) => $"{url()}/master/{username}/add/list/{MD5}";
         private static string urlMasterUserDellList(string username = USERNAME) => $"{url()}/master/{username}/dell/list/{MD5}";
@@ -109,6 +118,7 @@ namespace MasterDesktop.Lib
         private static string urlDeclarationUserAddList(string username = USERNAME) => $"{url()}/declaration/{username}/add/list/{MD5}";
         private static string urlDeclarationUserDellList(string username = USERNAME) => $"{url()}/declaration/{username}/dell/list/{MD5}";
         private static string urlDeclarationUserGetList(string username = USERNAME) => $"{url()}/declaration/{username}/get/list/{MD5}";
+        private static string urlConnectServer(Server s) => $"{url(s.Protocol, s.Host, s.Port)}/servis/getmd5/{s.MD5}";
 
         public static string RequestPOST(string url, string json = null)
         {
@@ -254,5 +264,47 @@ namespace MasterDesktop.Lib
         }
 
         public static List<Static> DellDeclaration(Declaration declaration) => DellDeclaration(new List<Declaration>() { declaration });
+
+        public static bool isIpAdress(string IP) => IPAdress.IsMatch(IP.Trim());
+        public static bool isPost(string Port)
+        {
+            if ((match = PortAdress.Match(Port.Trim())).Success)
+            {
+                int port = int.Parse(Port);
+                if (0 < port && port <= 65535)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static bool IsMD5(string md5) => MD5Adress.IsMatch(md5.Trim());
+        public static bool isConnectServer(Server server)
+        {
+            var page = RequestPOST(urlConnectServer(server));
+            if (string.IsNullOrWhiteSpace(page))
+            {
+                return false;
+            }
+            else if (page?.Trim() == "1")
+            {
+                return true;
+            }
+            else if (page?.Trim() == "2" || page?.Trim() == "3")
+            {
+                return false;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

@@ -13,7 +13,7 @@
     </Window.CommandBindings>
     <Grid HorizontalAlignment="Left" Height="447" VerticalAlignment="Top" Width="990" Margin="0,0,0,-15">
 
-        <Image Margin="0,0,-10,-11" Source="Websites.png" Stretch="Fill"/>
+        <Image Margin="0,0,-10,-11" Source="desktop.jpg" Stretch="Fill"/>
         <Button Content="Отправить" HorizontalAlignment="Left" Margin="751.001,378.749,0,0" VerticalAlignment="Top" Width="75" FontFamily="Jura" FontWeight="Bold" UseLayoutRounding="False" Cursor="Hand" ClickMode="Press" Foreground="White" Click="Button_Click_1">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
